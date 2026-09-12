@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "application": "ArtinRescNow",
+  "channel": "stable",
+  "version": null,
+  "release_tag": null,
+  "asset_name": null,
+  "download_url": null,
+  "sha256": null,
+  "minimum_supported_version": null,
+  "mandatory": false,
+  "notes": "Manifesto reservado para o Artin RescNow. Será ativado quando a versão-base atual for publicada."
+}
