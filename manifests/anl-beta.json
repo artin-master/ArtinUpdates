@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "application": "ArtinNetLens",
+  "channel": "beta",
+  "version": "0.15.0",
+  "release_tag": "anl-v0.15.0",
+  "asset_name": null,
+  "download_url": null,
+  "sha256": null,
+  "minimum_supported_version": "0.15.0",
+  "mandatory": false,
+  "notes": "Canal beta inicializado. Nenhum pacote beta publicado ainda."
+}
