@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "application": "ArtinRescNow",
+  "channel": "beta",
+  "version": null,
+  "release_tag": null,
+  "asset_name": null,
+  "download_url": null,
+  "sha256": null,
+  "minimum_supported_version": null,
+  "mandatory": false,
+  "notes": "Manifesto beta reservado para o Artin RescNow."
+}
