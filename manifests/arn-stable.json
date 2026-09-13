@@ -1,13 +1,26 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "application": "ArtinRescNow",
   "channel": "stable",
-  "version": null,
-  "release_tag": null,
-  "asset_name": null,
-  "download_url": null,
-  "sha256": null,
-  "minimum_supported_version": null,
+  "version": "0.9.3.1",
+  "release_tag": "arn-v0.9.3.1",
+  "asset_name": "ArtinRescNow_0.9.3.1_online_update.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.9.3.1/ArtinRescNow_0.9.3.1_online_update.zip",
+  "sha256": "435d064b597381a206e2feb1b50f5794587b7f4c917bd98220aa971a71c319a5",
+  "minimum_supported_version": "0.9.0",
   "mandatory": false,
-  "notes": "Manifesto reservado para o Artin RescNow. Será ativado quando a versão-base atual for publicada."
+  "notes": "# Artin RescNow 0.9.3.1 — Publisher Chain Recovery\n\n## Correção do updater\n\n- Diagnóstico de publicação incompleta agora diferencia ausência do asset `.sig` de erro HTTP genérico.\n- Quando uma release 0.9.3+ existe sem assinatura Ed25519, o ARN informa claramente que a publicação no ArtinUpdates está incompleta.\n- Mantém SHA-256, validação Ed25519, snapshot transacional, health-check e rollback do runtime.\n\n## Artin Publisher 0.2.1\n\nEsta build foi preparada para o novo fluxo atômico do Publisher: ZIP + SHA-256 + `.sig` + atualização/releitura do manifesto antes de declarar publicação concluída.",
+  "signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "eca1b5f80a150204",
+    "application": "ArtinRescNow",
+    "channel": "stable",
+    "version": "0.9.3.1",
+    "release_tag": "arn-v0.9.3.1",
+    "asset_name": "ArtinRescNow_0.9.3.1_online_update.zip",
+    "sha256": "435d064b597381a206e2feb1b50f5794587b7f4c917bd98220aa971a71c319a5",
+    "signature": "1M7SIrmvzH0nNu5w89ENN+5gH+7psUdKflwqqFy2vHym2RFFI3sOX2iZTPFyB5tRO7CPqI2nVVzeP8mkwxRTDw=="
+  },
+  "signature_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.9.3.1/ArtinRescNow_0.9.3.1_online_update.zip.sig"
 }
