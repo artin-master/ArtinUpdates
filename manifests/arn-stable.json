@@ -2,25 +2,25 @@
   "schema_version": 2,
   "application": "ArtinRescNow",
   "channel": "stable",
-  "version": "0.9.3.1",
-  "release_tag": "arn-v0.9.3.1",
-  "asset_name": "ArtinRescNow_0.9.3.1_online_update.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.9.3.1/ArtinRescNow_0.9.3.1_online_update.zip",
-  "sha256": "435d064b597381a206e2feb1b50f5794587b7f4c917bd98220aa971a71c319a5",
+  "version": "0.9.3.2",
+  "release_tag": "arn-v0.9.3.2",
+  "asset_name": "ArtinRescNow_0.9.3.2_online_update.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.9.3.2/ArtinRescNow_0.9.3.2_online_update.zip",
+  "sha256": "a977c7d07451c65fb787b7f4fcd074d834690b52d33fd2eebba43a9344b7f31b",
   "minimum_supported_version": "0.9.0",
   "mandatory": false,
-  "notes": "# Artin RescNow 0.9.3.1 — Publisher Chain Recovery\n\n## Correção do updater\n\n- Diagnóstico de publicação incompleta agora diferencia ausência do asset `.sig` de erro HTTP genérico.\n- Quando uma release 0.9.3+ existe sem assinatura Ed25519, o ARN informa claramente que a publicação no ArtinUpdates está incompleta.\n- Mantém SHA-256, validação Ed25519, snapshot transacional, health-check e rollback do runtime.\n\n## Artin Publisher 0.2.1\n\nEsta build foi preparada para o novo fluxo atômico do Publisher: ZIP + SHA-256 + `.sig` + atualização/releitura do manifesto antes de declarar publicação concluída.",
+  "notes": "# Artin RescNow 0.9.3.2 — Settings Utility Hub\n\n## Configurações mais limpas\n\n- Move **Atualizações**, **Validation Center** e **Hardware Knowledge Base** para o menu global `⋮`.\n- Cada ferramenta abre em uma janela flutuante própria, redimensionável e com rolagem, sem ocupar permanentemente a tela de Configurações.\n- Configurações volta a concentrar preferências do dia a dia, ambiente, aparência, sessão administrativa, notificações e informações do aplicativo.\n- O menu global passa a reunir Relatórios, Configurações, Atualizações, Validation Center, Hardware Knowledge Base e Segurança.\n- Os painéis reutilizam os mesmos controles e serviços internos: nenhuma lógica de atualização, validação física ou catálogo de hardware foi duplicada ou removida.\n\n## Atualizador\n\n- Mantém a cadeia assinada validada na 0.9.3.1: Artin Publisher → ArtinUpdates → SHA-256 → Ed25519 → snapshot → health-check → rollback.",
   "signature": {
     "schema_version": 1,
     "algorithm": "ed25519",
     "key_id": "eca1b5f80a150204",
     "application": "ArtinRescNow",
     "channel": "stable",
-    "version": "0.9.3.1",
-    "release_tag": "arn-v0.9.3.1",
-    "asset_name": "ArtinRescNow_0.9.3.1_online_update.zip",
-    "sha256": "435d064b597381a206e2feb1b50f5794587b7f4c917bd98220aa971a71c319a5",
-    "signature": "1M7SIrmvzH0nNu5w89ENN+5gH+7psUdKflwqqFy2vHym2RFFI3sOX2iZTPFyB5tRO7CPqI2nVVzeP8mkwxRTDw=="
+    "version": "0.9.3.2",
+    "release_tag": "arn-v0.9.3.2",
+    "asset_name": "ArtinRescNow_0.9.3.2_online_update.zip",
+    "sha256": "a977c7d07451c65fb787b7f4fcd074d834690b52d33fd2eebba43a9344b7f31b",
+    "signature": "/tMvouqOxhVkef+fpU9h0HDsXVIWHsz2WN7cQUVr3+iqSAISJg8v5/cRnk+i56vF+dYR6n2uwu6IXHM6JUDFBg=="
   },
-  "signature_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.9.3.1/ArtinRescNow_0.9.3.1_online_update.zip.sig"
+  "signature_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.9.3.2/ArtinRescNow_0.9.3.2_online_update.zip.sig"
 }
