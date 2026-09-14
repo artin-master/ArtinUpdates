@@ -2,12 +2,12 @@
   "schema_version": 1,
   "application": "ArtinNetLens",
   "channel": "stable",
-  "version": "0.15.0",
-  "release_tag": "anl-v0.15.0",
-  "asset_name": null,
-  "download_url": null,
-  "sha256": null,
-  "minimum_supported_version": "0.15.0",
+  "version": "0.18.0",
+  "release_tag": "anl-v0.18.0",
+  "asset_name": "ArtinNetLens_0.18.0_remote_sites_observability.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.18.0/ArtinNetLens_0.18.0_remote_sites_observability.zip",
+  "sha256": "c08588aa1f2ea2cfc12c64803b8f52b4c7a56c507c2a81bb5e594ee39b817ec3",
+  "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "Baseline inicial do sistema de atualização. Nenhum pacote de atualização publicado ainda."
+  "notes": "## 0.18.0 — Remote Sites + Observability Foundation\n\n- Detecta túneis WireGuard existentes em modo estritamente somente leitura.\n- Exibe interface, estado do handshake, redes permitidas e tráfego RX/TX sem guardar chaves completas.\n- Permite associar explicitamente uma interface WireGuard a um Site; VPNs continuam fora da descoberta automática.\n- Adiciona estado do acesso remoto à administração de Sites, sem criar ou alterar túneis.\n- Cria contrato normalizado e independente para métricas por Site, preparando exportação futura para Grafana.\n- Grafana e WireGuard continuam opcionais; o Dashboard nativo e o funcionamento local permanecem autônomos.\n- Preserva integralmente a consolidação de identidade da 0.17.0."
 }
