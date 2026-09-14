@@ -2,12 +2,12 @@
   "schema_version": 1,
   "application": "ArtinNetLens",
   "channel": "stable",
-  "version": "0.18.0",
-  "release_tag": "anl-v0.18.0",
-  "asset_name": "ArtinNetLens_0.18.0_remote_sites_observability.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.18.0/ArtinNetLens_0.18.0_remote_sites_observability.zip",
-  "sha256": "c08588aa1f2ea2cfc12c64803b8f52b4c7a56c507c2a81bb5e594ee39b817ec3",
+  "version": "0.19.0",
+  "release_tag": "anl-v0.19.0",
+  "asset_name": "ArtinNetLens_0.19.0_reliable_updates_grafana.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.19.0/ArtinNetLens_0.19.0_reliable_updates_grafana.zip",
+  "sha256": "606a5a666cb290b142916122db56085d99cc2eba7c35cb63ffdcadc3956677a7",
   "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "## 0.18.0 — Remote Sites + Observability Foundation\n\n- Detecta túneis WireGuard existentes em modo estritamente somente leitura.\n- Exibe interface, estado do handshake, redes permitidas e tráfego RX/TX sem guardar chaves completas.\n- Permite associar explicitamente uma interface WireGuard a um Site; VPNs continuam fora da descoberta automática.\n- Adiciona estado do acesso remoto à administração de Sites, sem criar ou alterar túneis.\n- Cria contrato normalizado e independente para métricas por Site, preparando exportação futura para Grafana.\n- Grafana e WireGuard continuam opcionais; o Dashboard nativo e o funcionamento local permanecem autônomos.\n- Preserva integralmente a consolidação de identidade da 0.17.0."
+  "notes": "## 0.19.0 — Reliable Updates + Grafana Export\n\n- Reabre o ANL automaticamente somente após o instalador concluir com sucesso.\n- Mostra uma única confirmação com versão anterior e nova.\n- Mantém a versão atual quando a instalação falha e não anuncia falso sucesso.\n- Exporta métricas por Site em JSON Lines e Prometheus, compatível com stacks usadas pelo Grafana.\n- Consolida saúde WireGuard, identidade persistente e observabilidade remota das versões anteriores."
 }
