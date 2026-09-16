@@ -2,12 +2,12 @@
   "schema_version": 1,
   "application": "ArtinNetLens",
   "channel": "stable",
-  "version": "0.19.0",
-  "release_tag": "anl-v0.19.0",
-  "asset_name": "ArtinNetLens_0.19.0_reliable_updates_grafana.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.19.0/ArtinNetLens_0.19.0_reliable_updates_grafana.zip",
-  "sha256": "606a5a666cb290b142916122db56085d99cc2eba7c35cb63ffdcadc3956677a7",
+  "version": "0.21.1",
+  "release_tag": "anl-v0.21.1",
+  "asset_name": "ArtinNetLens_0.21.1_visual_icon_polish.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.21.1/ArtinNetLens_0.21.1_visual_icon_polish.zip",
+  "sha256": "648f8afb9655874090ba1c268200a7737366eed9574dde7835d1009a4ef3bf47",
   "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "## 0.19.0 — Reliable Updates + Grafana Export\n\n- Reabre o ANL automaticamente somente após o instalador concluir com sucesso.\n- Mostra uma única confirmação com versão anterior e nova.\n- Mantém a versão atual quando a instalação falha e não anuncia falso sucesso.\n- Exporta métricas por Site em JSON Lines e Prometheus, compatível com stacks usadas pelo Grafana.\n- Consolida saúde WireGuard, identidade persistente e observabilidade remota das versões anteriores."
+  "notes": "# Artin NetLens 0.21.1\n\n## Visual Icon Polish + Actionable Network Brief\n\nEsta build é candidata ao teste visual e operacional antes da publicação.\n\n### Entrega\n\n- Menu lateral compacto por padrão, com SVGs próprios em traço fino e verde para todas as funções existentes.\n- Logotipo preservado como ícone oficial no modo compacto e assinatura completa no modo expandido.\n- Botão para expandir/recolher e preferência salva entre reinicializações.\n- Tooltips com o nome das funções, mantendo clareza sem ocupar espaço permanente.\n- Recolhimento obrigatório em telas muito estreitas para proteger a área principal.\n- Botão discreto **Como está minha rede?** no rodapé.\n- Janela flutuante com equipamentos totais, disponibilidade, não confirmados e identificados, incluindo percentuais.\n- Lista concreta dos equipamentos não confirmados com nome, IP, tipo e última observação quando disponível.\n- Comparação detalhada entre visitas, período comparado e eventos recentes com horário.\n- Recomendações operacionais e atalhos para Equipamentos, Histórico, Alertas e Monitoramento.\n- Identificação explícita da fonte: descoberta atual ou última visita concluída.\n- Recursos da 0.20.0 preservados integralmente.\n\n### Validação antes da publicação\n\n- Compilação de todos os módulos Python.\n- Sintaxe dos scripts shell.\n- Coerência da versão 0.21.1 em pacote, módulo e instalador.\n- Testes do resumo com leitura atual, fallback para snapshot e eventos de atenção.\n- Inspeção do contrato visual da barra compacta, tooltips, logotipo e botão do resumo.\n- Reextração do ZIP e repetição das validações sobre o pacote final.\n\n### Segurança operacional\n\n- O resumo não inicia varredura nem altera equipamentos.\n- Dados antigos nunca são anunciados como estado atual; a origem e a data são mostradas.\n- A descoberta e o monitoramento permanecem somente leitura.\n- Grafana, WireGuard e SNMP continuam opcionais."
 }
