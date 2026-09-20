@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.27",
-  "title": "Artin Sentinel 0.2.27 — Update Center + ArtinUpdates",
-  "notes": "# Artin Sentinel 0.2.27 — Update Center + ArtinUpdates\n\n- Nova aba **Atualizações** em Configuração e Manutenção.\n- Canais de atualização **Stable** e **Beta**.\n- Verificação manual ou periódica ao iniciar, com intervalo mínimo para evitar consultas repetidas.\n- Manifestos centrais `artin-update-manifest-v1`, compatíveis com a arquitetura ArtinUpdates comum aos aplicativos Artin.\n- Download e instalação sempre com consentimento explícito; sem atualização silenciosa.\n- SHA-256 obrigatório antes de extrair ou executar o pacote.\n- Suporte a assinatura Ed25519 e política opcional de assinatura obrigatória.\n- Extração ZIP segura contra path traversal, caminhos absolutos e links simbólicos.\n- Helper externo com watchdog de 10 s aguarda o encerramento coordenado do Sentinel antes de executar `install.sh`.\n- Mantido o fluxo pós-update com relançamento e **Novidades desta versão** uma única vez.\n- Incluído `tools/build_update_manifest.py` para gerar manifesto, hash, tamanho e assinatura opcional no fluxo de publicação.\n- Mantidos Channel Health Monitor, áudio/mosaico da 0.2.25 e compatibilidade já validada.",
+  "version": "0.2.28",
+  "title": "Artin Sentinel 0.2.28 — Focused Close Recovery + Official Updates + Talkback Lab",
+  "notes": "# Artin Sentinel 0.2.28 — Focused Close Recovery + Official Updates + Talkback Lab\n\n- Corrigido o bug em que fechar uma câmera durante a visualização ampliada deixava o mosaico vazio/travado.\n- `X` do tile e `Fechar canal` agora restauram o estado de foco antes de salvar o workspace.\n- Os demais decodificadores FFmpeg permanecem ativos durante a restauração.\n- A seleção passa automaticamente para outro canal aberto ou para um quadro disponível.\n- Janelas independentes de monitoramento receberam a mesma recuperação e preservam o fullscreen anterior.\n- Corrigida a persistência do workspace durante foco: não depende mais de `slots` inexistentes no `_focus_return_state`.\n- ArtinUpdates oficial passa a vir pré-configurado em `https://raw.githubusercontent.com/artin-master/ArtinUpdates/main`.\n- Mantidos Stable/Beta, SHA-256, Ed25519 opcional, extração segura e instalação coordenada da 0.2.27.\n- IT-Blue X3-WE2Q: transporte Push-to-Talk DVRIP/Sofia G.711 A-law habilitado como experimental para validação física.\n- AKDB core avançou para revisão 8; registro X3-WE2Q e extensão Sentinel receberam nova revisão mantendo `xm-dvrip-talkback-not-field-validated`.\n- MiboCam permanece sem talkback local habilitado até validação específica do protocolo.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.27/ArtinSentinel_0.2.27_update_center.zip",
-    "sha256": "7689a7c050da660f8203e7b1fd4f4365d7dba69a6d0acdb86632b75d02454ce9",
-    "size": 1079671
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.28/ArtinSentinel_0.2.28_focus_recovery_official_updates_talkback.zip",
+    "sha256": "100c74259d882586a25315e4592a8196b875dc8386725de37f5cb9dbc18ca45b",
+    "size": 1101840
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.27",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.28",
   "minimum_python": "3.12",
   "mandatory": false
 }
