@@ -1,0 +1,16 @@
+{
+  "schema": "artin-update-manifest-v1",
+  "app_id": "artin-sentinel",
+  "channel": "stable",
+  "version": "0.2.27",
+  "title": "Artin Sentinel 0.2.27 — Update Center + ArtinUpdates",
+  "notes": "# Artin Sentinel 0.2.27 — Update Center + ArtinUpdates\n\n- Nova aba **Atualizações** em Configuração e Manutenção.\n- Canais de atualização **Stable** e **Beta**.\n- Verificação manual ou periódica ao iniciar, com intervalo mínimo para evitar consultas repetidas.\n- Manifestos centrais `artin-update-manifest-v1`, compatíveis com a arquitetura ArtinUpdates comum aos aplicativos Artin.\n- Download e instalação sempre com consentimento explícito; sem atualização silenciosa.\n- SHA-256 obrigatório antes de extrair ou executar o pacote.\n- Suporte a assinatura Ed25519 e política opcional de assinatura obrigatória.\n- Extração ZIP segura contra path traversal, caminhos absolutos e links simbólicos.\n- Helper externo com watchdog de 10 s aguarda o encerramento coordenado do Sentinel antes de executar `install.sh`.\n- Mantido o fluxo pós-update com relançamento e **Novidades desta versão** uma única vez.\n- Incluído `tools/build_update_manifest.py` para gerar manifesto, hash, tamanho e assinatura opcional no fluxo de publicação.\n- Mantidos Channel Health Monitor, áudio/mosaico da 0.2.25 e compatibilidade já validada.",
+  "package": {
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.27/ArtinSentinel_0.2.27_update_center.zip",
+    "sha256": "7689a7c050da660f8203e7b1fd4f4365d7dba69a6d0acdb86632b75d02454ce9",
+    "size": 1079671
+  },
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.27",
+  "minimum_python": "3.12",
+  "mandatory": false
+}
