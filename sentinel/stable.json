@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.31",
-  "title": "Artin Sentinel 0.2.31 — X3 Talkback Profile Reconciliation",
-  "notes": "# Artin Sentinel 0.2.31 — X3 Talkback Profile Reconciliation\n\n## Hotfix de campo\n- Corrige o caso observado em que a IT-Blue aparecia como `SpeedDome Ball It-blue`, tinha PTZ funcionando, mas o MIC continuava oculto.\n- A causa era um `akdb_profile=it-blue-camera` persistido por versões antigas; a 0.2.30 só recuperava X3 quando não existia perfil salvo.\n- O resolver operacional agora pode reconciliar esse perfil genérico para `it-blue-x3-we2q` quando há evidência simultânea de provider/fabricante IT-Blue e identidade SpeedDome/Ball/X3.\n- A regra não promove uma IT-Blue genérica/Web Viewer sem essa evidência.\n\n## Preservado da 0.2.30\n- MIC EXP somente na Lente PTZ/Canal 01.\n- Logitech C270 selecionável, ganho e TEST local em background.\n- Talkback DVRIP/G.711 A-law experimental.\n- Correções Intelbras, áudio não bloqueante, ArtinUpdates e fallback multilentes.",
+  "version": "0.2.32",
+  "title": "Artin Sentinel 0.2.32 — Audio Polish + Responsive Inspector",
+  "notes": "# Artin Sentinel 0.2.32 — Audio Polish + Responsive Inspector\n\n- Corrige o estouro dos controles de MIC/Ganho/TEST no painel lateral.\n- Inspector agora aceita largura de 285 a 460 px e salva a largura escolhida via QSettings.\n- Combo de microfone usa política de tamanho compacta e tooltip com rótulo/source completo.\n- FFmpeg/Pulse-PipeWire é priorizado; ALSA e ffplay ficam como fallbacks.\n- Remove `-nostdin` do ffplay para compatibilidade com builds que rejeitam essa opção.\n- RTSP 503/5XX transitório recebe até três tentativas com backoff no caminho rápido de áudio confirmado.\n- Um erro de entrada RTSP não é repetido desnecessariamente em todos os backends de saída.\n- Sink-input do PipeWire é procurado em background; o áudio inicia sem esperar o controle de volume aparecer.\n- Diagnóstico mostra `Estado atual do áudio` e mantém histórico abaixo dele.\n- Warnings FFmpeg de timestamp/pixel format são filtrados do diagnóstico operacional.\n- Mantida a reconciliação X3 da 0.2.31 e todo o restante do comportamento já validado.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.31/ArtinSentinel_0.2.31_x3_talkback_profile_reconciliation.zip",
-    "sha256": "6d1f0bedd6d30e90aed324dd6f281e5b518b0e0abda15b2f83f6ce7c6c0c4f2b",
-    "size": 2307468
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.32/ArtinSentinel_0.2.32_audio_polish_responsive_inspector.zip",
+    "sha256": "5ff1ea3edf6c1c85a8503f8f8287ce2f3a0910e8826d7e98f4f2d664e4bbd350",
+    "size": 2461519
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.31",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.32",
   "minimum_python": "3.12",
   "mandatory": false
 }
