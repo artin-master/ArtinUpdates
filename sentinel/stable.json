@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.32",
-  "title": "Artin Sentinel 0.2.32 — Audio Polish + Responsive Inspector",
-  "notes": "# Artin Sentinel 0.2.32 — Audio Polish + Responsive Inspector\n\n- Corrige o estouro dos controles de MIC/Ganho/TEST no painel lateral.\n- Inspector agora aceita largura de 285 a 460 px e salva a largura escolhida via QSettings.\n- Combo de microfone usa política de tamanho compacta e tooltip com rótulo/source completo.\n- FFmpeg/Pulse-PipeWire é priorizado; ALSA e ffplay ficam como fallbacks.\n- Remove `-nostdin` do ffplay para compatibilidade com builds que rejeitam essa opção.\n- RTSP 503/5XX transitório recebe até três tentativas com backoff no caminho rápido de áudio confirmado.\n- Um erro de entrada RTSP não é repetido desnecessariamente em todos os backends de saída.\n- Sink-input do PipeWire é procurado em background; o áudio inicia sem esperar o controle de volume aparecer.\n- Diagnóstico mostra `Estado atual do áudio` e mantém histórico abaixo dele.\n- Warnings FFmpeg de timestamp/pixel format são filtrados do diagnóstico operacional.\n- Mantida a reconciliação X3 da 0.2.31 e todo o restante do comportamento já validado.",
+  "version": "0.2.33",
+  "title": "Artin Sentinel 0.2.33 — Per-Lens Capabilities + Talkback Diagnostics",
+  "notes": "# Artin Sentinel 0.2.33 — Per-Lens Capabilities + Talkback Diagnostics\n\n- Adiciona `ptz_scope` à extensão Sentinel da AKDB e define IT-Blue X3 como `primary`.\n- Live View passa a carregar o canal selecionado antes de habilitar PTZ; lentes fixas X3 não herdam mais controles de movimento.\n- Talkback já usava `talkback_scope=primary`; a mesma semântica passa a ser compartilhada pelo resolvedor de capabilities por canal.\n- Talkback XM/DVRIP usa uma única sessão autenticada e frames de talk com type byte 0x01, compatível com fluxo observado em implementações XM/iCSee.\n- `OPTalk Start/Stop` passa a ser enviado sem aguardar reply síncrono, evitando consumir frames intercalados e reduzindo `Ret=504` espúrio.\n- Durante PTT, downstream pendente é drenado periodicamente para evitar buffer cheio.\n- Diagnóstico PTT registra login/Claim/Start/primeiro áudio/Stop e quantidade de frames/bytes enviados.\n- Botão MIC passa a alternância por clique; o usuário não precisa manter o mouse pressionado.\n- `stop()` do talkback deixa de fechar o socket DVRIP na thread Qt, permitindo encerramento limpo pelo worker.\n- Mibo com `audio_mode=bidirectional` e protocolo não homologado passa a sinalizar `MIC PEND` sem expor controle de transmissão.\n- AKDB Core rev. 11: lentes fixas IT-Blue registradas como detectadas em campo, ainda não homologadas; Mibo registra vídeo/escuta funcionais e talkback local pendente.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.32/ArtinSentinel_0.2.32_audio_polish_responsive_inspector.zip",
-    "sha256": "5ff1ea3edf6c1c85a8503f8f8287ce2f3a0910e8826d7e98f4f2d664e4bbd350",
-    "size": 2461519
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.33/ArtinSentinel_0.2.33_channel_capabilities_talkback_diagnostics.zip",
+    "sha256": "974e1d1a3a2b05711b7ed5d3e56fac5bfdb6948abad36c75f50aee95cc300b83",
+    "size": 1144231
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.32",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.33",
   "minimum_python": "3.12",
   "mandatory": false
 }
