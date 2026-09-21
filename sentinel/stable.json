@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.38",
-  "title": "Artin Sentinel 0.2.38 — Intelbras postAudio V3.81 Diagnostics",
-  "notes": "# Artin Sentinel 0.2.38 — Intelbras postAudio V3.81 Diagnostics\n\n- Alinha o transporte experimental Intelbras HTTP `postAudio` ao manual HTTP API V3.81.\n- Mantém `singlepart` como primeira tentativa e adiciona fallback automático para `multipart/x-mixed-replace` quando o equipamento encerra `singlepart` cedo.\n- No modo multipart, transmite G.711 A-law em blocos de 800 bytes, conforme o exemplo oficial.\n- Adiciona diagnóstico opcional `POST /cgi-bin/api/devAudioDecode/empty` com `sourceType=0` para consultar o buffer de talkback em firmwares que suportem a API V3.61+.\n- Substitui o estado precoce “Falando” por “Transmitindo • aguardando confirmação do equipamento”. “Falando” só é exibido quando o decoder confirma dados de talkback.\n- Amplia o diagnóstico de PTT Intelbras para seis etapas, incluindo framing, estabilidade da sessão, buffer do decoder, resposta HTTP observável e quantidade de áudio transmitida.\n- Preserva o gate de segurança: `postAudio` só aparece quando o probe autenticado anterior confirmou saída de áudio e o operador aciona MIC explicitamente.\n- Mantém o backoff de falha de rede, multilentes/PTZ da IT-Blue, áudio de escuta e demais recursos validados da 0.2.37.",
+  "version": "0.2.39",
+  "title": "Artin Sentinel 0.2.39 — Intelbras NetSDK Talkback + Live Controls Polish",
+  "notes": "# Artin Sentinel 0.2.39 — Intelbras NetSDK Talkback + Live Controls Polish\n\n- A iMX C direta passa a priorizar o transporte experimental do NetSDK oficial Intelbras para Push-to-Talk; o Sentinel deixa de repetir automaticamente o `postAudio` HTTP que já foi rejeitado em campo pela câmera.\n- Adiciona bridge `ctypes` mínima para o NetSDK Linux x86-64 e segue a sequência do demo oficial `05.Talk`: `CLIENT_LoginEx2`, configuração de talk direto, `CLIENT_StartTalkEx`, `CLIENT_TalkSendData` e `CLIENT_StopTalkEx`.\n- O áudio do microfone continua vindo do pipeline já validado C270/PipeWire/ALSA, agora convertido para PCM mono 8 kHz / 16-bit e empacotado no formato de 648 bytes usado pelo demo oficial.\n- Adiciona `tools/install_intelbras_netsdk.py`; o `install.sh` procura o ZIP oficial `General_NetSDK_3.050_PlaySDK_3.042.zip` ao lado do instalador, no diretório pai ou em `~/Downloads` e importa apenas as bibliotecas Linux necessárias para o runtime local.\n- Os binários proprietários do SDK não são redistribuídos dentro do ZIP do Sentinel.\n- O resultado de campo MHDX/CAM 5 passa a ser respeitado: `postAudio` estável no gravador não é tratado como talkback encaminhado à câmera IP, pois a voz não chegou ao alto-falante da Mibo.\n- MIC indisponível agora fica propositalmente visível: `MIC OFF` no tile e `MIC INDISP.` no inspetor, com destaque âmbar e motivo no tooltip/diagnóstico.\n- O menu de contexto do tile foi reorganizado em **VISUALIZAÇÃO**, **ÁUDIO** e **CANAL**; Main/Sub/Auto e enquadramento usam marcação de estado, áudio/PTT mostram disponibilidade e a reconexão pode ser pausada/retomada de forma explícita.\n- Mantém IT-Blue/XM DVRIP, PTZ por lente, áudio de escuta, Update Center e o backoff de rede da 0.2.38.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.38/ArtinSentinel_0.2.38_postaudio_v381_diagnostics.zip",
-    "sha256": "9ceffecd1e811c36668ec27358e4517569111f1bdfd22d4685e4bc4bda938df0",
-    "size": 1180242
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.39/ArtinSentinel_0.2.39_intelbras_netsdk_talkback.zip",
+    "sha256": "8630dcd47b559ac105ebf89fb1e78ebc4908a699ad2c344234518b28c2b96fb6",
+    "size": 1199841
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.38",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.39",
   "minimum_python": "3.12",
   "mandatory": false
 }
