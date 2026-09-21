@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.39",
-  "title": "Artin Sentinel 0.2.39 — Intelbras NetSDK Talkback + Live Controls Polish",
-  "notes": "# Artin Sentinel 0.2.39 — Intelbras NetSDK Talkback + Live Controls Polish\n\n- A iMX C direta passa a priorizar o transporte experimental do NetSDK oficial Intelbras para Push-to-Talk; o Sentinel deixa de repetir automaticamente o `postAudio` HTTP que já foi rejeitado em campo pela câmera.\n- Adiciona bridge `ctypes` mínima para o NetSDK Linux x86-64 e segue a sequência do demo oficial `05.Talk`: `CLIENT_LoginEx2`, configuração de talk direto, `CLIENT_StartTalkEx`, `CLIENT_TalkSendData` e `CLIENT_StopTalkEx`.\n- O áudio do microfone continua vindo do pipeline já validado C270/PipeWire/ALSA, agora convertido para PCM mono 8 kHz / 16-bit e empacotado no formato de 648 bytes usado pelo demo oficial.\n- Adiciona `tools/install_intelbras_netsdk.py`; o `install.sh` procura o ZIP oficial `General_NetSDK_3.050_PlaySDK_3.042.zip` ao lado do instalador, no diretório pai ou em `~/Downloads` e importa apenas as bibliotecas Linux necessárias para o runtime local.\n- Os binários proprietários do SDK não são redistribuídos dentro do ZIP do Sentinel.\n- O resultado de campo MHDX/CAM 5 passa a ser respeitado: `postAudio` estável no gravador não é tratado como talkback encaminhado à câmera IP, pois a voz não chegou ao alto-falante da Mibo.\n- MIC indisponível agora fica propositalmente visível: `MIC OFF` no tile e `MIC INDISP.` no inspetor, com destaque âmbar e motivo no tooltip/diagnóstico.\n- O menu de contexto do tile foi reorganizado em **VISUALIZAÇÃO**, **ÁUDIO** e **CANAL**; Main/Sub/Auto e enquadramento usam marcação de estado, áudio/PTT mostram disponibilidade e a reconexão pode ser pausada/retomada de forma explícita.\n- Mantém IT-Blue/XM DVRIP, PTZ por lente, áudio de escuta, Update Center e o backoff de rede da 0.2.38.",
+  "version": "0.2.41",
+  "title": "Artin Sentinel 0.2.41 — Intelbras NetSDK Literal Talk Setup",
+  "notes": "# Artin Sentinel 0.2.41 — Intelbras NetSDK Literal Talk Setup\n\n## Correções\n\n- Corrige `nPacketPeriod`: o valor 0 agora é preservado exatamente como no demo oficial Linux `05.Talk`; a 0.2.40 convertia 0/ausência para um período preenchido.\n- `TALK_CHANNEL` passa a ter o retorno verificado, em vez de ser enviado sem validação.\n- O diagnóstico exibe separadamente os resultados de `ENCODE_TYPE`, `SERVER_MODE`, `SPEAK_PARAM`, `TRANSFER_MODE` e `TALK_CHANNEL`.\n\n## Testes de campo\n\n- **A1:** demo literal — speaker 0, wait=false.\n- **A2:** somente `bEnableWait=true`.\n- **A3:** somente `speakerChannel=1`.\n- B/C permanecem para testar C270 PCM/G.711A depois de identificar o handshake correto.\n- MODE3 foi removido da UI da iMX C porque o dispositivo reportou talk V2 e recusou MODE3 (`0x80000007`).\n\n## Compatibilidade\n\nNenhuma alteração em RTSP, áudio de escuta, MHDX/CAM 5, IT-Blue/DVRIP, PTZ, updater ou AKDB. O NetSDK continua sendo provisionado localmente e não é redistribuído no pacote público.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.39/ArtinSentinel_0.2.39_intelbras_netsdk_talkback.zip",
-    "sha256": "8630dcd47b559ac105ebf89fb1e78ebc4908a699ad2c344234518b28c2b96fb6",
-    "size": 1199841
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.41/ArtinSentinel_0.2.41_netsdk_literal_talk.zip",
+    "sha256": "d0a179104ec87715a63d7c2370e039582aa34257b77d0a3cee398f88b0ae46ae",
+    "size": 1217661
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.39",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.41",
   "minimum_python": "3.12",
   "mandatory": false
 }
