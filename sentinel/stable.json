@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.30",
-  "title": "Artin Sentinel 0.2.30 — Talkback Capability + Audio Diagnostics",
-  "notes": "# Artin Sentinel 0.2.30 — Talkback Capability + Audio Diagnostics\n\n## IT-Blue / talkback\n- Corrigido o caso em que a X3-WE2Q tinha áudio de escuta validado (`listen`) e, por isso, o Live View escondia o MIC apesar de a AKDB possuir um transporte de retorno implementado experimentalmente.\n- `channel_audio_info()` passa a manter separados o modo observado no stream e a capacidade conhecida do modelo.\n- O talkback da X3 fica restrito ao escopo `primary`: Lente PTZ / Canal 01. Lentes fixas não herdam o retorno sem evidência própria.\n- A interface identifica o recurso como **MIC EXP**, evitando apresentar uma função ainda não homologada como definitiva.\n- Inventários antigos podem recuperar o perfil X3 por identidade/modelo conservadores quando `akdb_profile` ainda não estava persistido.\n\n## Diagnóstico de áudio local\n- Novo botão **TEST** ao lado do microfone.\n- O teste roda no executor de áudio, captura aproximadamente 1,25 s e usa `volumedetect` do FFmpeg para informar nível médio e pico.\n- Nenhum áudio do TEST é salvo ou transmitido para a câmera.\n- O painel mostra microfone selecionado e ganho configurado; alterações atualizam o resumo imediatamente.\n\n## AKDB\n- `AkdbProfile` ganha `talkback_scope` e `talkback_validation`.\n- X3-WE2Q: `talkback_scope=primary`, `talkback_validation=experimental`.\n- MiboCam continua `unvalidated` e não passa a expor MIC por herança.\n- AKDB Core revision 10; registro X3 revision 8; extensão Sentinel revision 7.\n\n## Preservado da 0.2.29\n- Canais Intelbras visíveis na árvore e utilizáveis em janelas independentes.\n- Encerramento de áudio/talkback sem bloquear o event loop do Qt.\n- Seleção persistente de microfone e ganho -6…+9 dB.\n- Handshake OPTalk experimental e fallback OPMonitor DVRIP multilente.\n- Rechecagem de áudio do Canal 5 IP/proxy do MHDX.\n- ArtinUpdates oficial e correção de foco/mosaico.",
+  "version": "0.2.31",
+  "title": "Artin Sentinel 0.2.31 — X3 Talkback Profile Reconciliation",
+  "notes": "# Artin Sentinel 0.2.31 — X3 Talkback Profile Reconciliation\n\n## Hotfix de campo\n- Corrige o caso observado em que a IT-Blue aparecia como `SpeedDome Ball It-blue`, tinha PTZ funcionando, mas o MIC continuava oculto.\n- A causa era um `akdb_profile=it-blue-camera` persistido por versões antigas; a 0.2.30 só recuperava X3 quando não existia perfil salvo.\n- O resolver operacional agora pode reconciliar esse perfil genérico para `it-blue-x3-we2q` quando há evidência simultânea de provider/fabricante IT-Blue e identidade SpeedDome/Ball/X3.\n- A regra não promove uma IT-Blue genérica/Web Viewer sem essa evidência.\n\n## Preservado da 0.2.30\n- MIC EXP somente na Lente PTZ/Canal 01.\n- Logitech C270 selecionável, ganho e TEST local em background.\n- Talkback DVRIP/G.711 A-law experimental.\n- Correções Intelbras, áudio não bloqueante, ArtinUpdates e fallback multilentes.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.30/ArtinSentinel_0.2.30_talkback_capability_audio_diagnostics.zip",
-    "sha256": "4f5618981b358e4c76090eb1942e268f1b271715bdba8c2b6dfb667234f5faac",
-    "size": 1127948
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.31/ArtinSentinel_0.2.31_x3_talkback_profile_reconciliation.zip",
+    "sha256": "6d1f0bedd6d30e90aed324dd6f281e5b518b0e0abda15b2f83f6ce7c6c0c4f2b",
+    "size": 2307468
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.30",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.31",
   "minimum_python": "3.12",
   "mandatory": false
 }
