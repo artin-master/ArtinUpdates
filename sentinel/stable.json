@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.34",
-  "title": "Artin Sentinel 0.2.34 — Per-Lens PTZ Hotfix",
-  "notes": "# Artin Sentinel 0.2.34 — Per-Lens PTZ Hotfix\n\n- Corrige a herança indevida de PTZ nas lentes fixas da IT-Blue X3/SpeedDome.\n- O inspetor lateral passa a reconciliar perfis antigos `it-blue-camera` para o perfil operacional X3 antes de resolver PTZ.\n- Para X3 reconhecida, `ptz_scope=primary` tem precedência sobre metadata genérica antiga.\n- Lente PTZ / Canal 01 mantém PTZ e MIC experimental; Lente fixa 1 e Lente fixa 2 deixam de expor PTZ.\n- O backend continua bloqueando comandos PTZ quando o canal selecionado não pertence ao escopo principal.\n- Mantém integralmente as correções e diagnósticos da 0.2.33.",
+  "version": "0.2.36",
+  "title": "Artin Sentinel 0.2.36 — Intelbras Official HTTP API Foundation",
+  "notes": "# Artin Sentinel 0.2.36 — Intelbras Official HTTP API Foundation\n\n- Adiciona `artin_sentinel/intelbras_http.py` com probe somente leitura da família HTTP API Intelbras.\n- Consulta `IntervideoManager.cgi?action=getVersion&Name=CGI`, `devAudioInput.cgi?action=getCollect` e `devAudioOutput.cgi?action=getCollect`.\n- Suporta HTTP Digest e HTTPS local com certificado não público apenas para o probe explicitamente solicitado.\n- Persiste em `metadata_json.intelbras_http_api` somente versão/capabilities/status sanitizados; nunca senha, nonce, token ou header Authorization.\n- Marca `postAudio` como candidato somente quando o próprio firmware retorna `audio_outputs > 0`.\n- Adiciona “Testar API Intelbras (somente leitura)” em Configuração → Equipamentos e no menu de contexto.\n- Exibe o resultado no painel “Acesso local / Protocolos”.\n- Mantém `postAudio` desabilitado nesta versão: o teste não transmite áudio nem altera configuração.\n- Mantém NetSDK como dependência externa opcional; o pacote oficial recebido é usado como referência de integração, não é redistribuído pelo Sentinel.\n- Preserva todas as correções 0.2.35/0.2.34, incluindo PTT IT-Blue e capabilities por lente.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.34/ArtinSentinel_0.2.34_per_lens_ptz_hotfix.zip",
-    "sha256": "1857cc77eff7cd8be788ab5189cccee103851cfed2ec8065654652e597fd8ab1",
-    "size": 1142833
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.36/ArtinSentinel_0.2.36_intelbras_http_api_foundation.zip",
+    "sha256": "dfc97fc99c3380ce6342d85fadb594cdf0c5ef5fe43464356e59a329662a352d",
+    "size": 1159587
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.34",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.36",
   "minimum_python": "3.12",
   "mandatory": false
 }
