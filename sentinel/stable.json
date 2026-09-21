@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.36",
-  "title": "Artin Sentinel 0.2.36 — Intelbras Official HTTP API Foundation",
-  "notes": "# Artin Sentinel 0.2.36 — Intelbras Official HTTP API Foundation\n\n- Adiciona `artin_sentinel/intelbras_http.py` com probe somente leitura da família HTTP API Intelbras.\n- Consulta `IntervideoManager.cgi?action=getVersion&Name=CGI`, `devAudioInput.cgi?action=getCollect` e `devAudioOutput.cgi?action=getCollect`.\n- Suporta HTTP Digest e HTTPS local com certificado não público apenas para o probe explicitamente solicitado.\n- Persiste em `metadata_json.intelbras_http_api` somente versão/capabilities/status sanitizados; nunca senha, nonce, token ou header Authorization.\n- Marca `postAudio` como candidato somente quando o próprio firmware retorna `audio_outputs > 0`.\n- Adiciona “Testar API Intelbras (somente leitura)” em Configuração → Equipamentos e no menu de contexto.\n- Exibe o resultado no painel “Acesso local / Protocolos”.\n- Mantém `postAudio` desabilitado nesta versão: o teste não transmite áudio nem altera configuração.\n- Mantém NetSDK como dependência externa opcional; o pacote oficial recebido é usado como referência de integração, não é redistribuído pelo Sentinel.\n- Preserva todas as correções 0.2.35/0.2.34, incluindo PTT IT-Blue e capabilities por lente.",
+  "version": "0.2.37",
+  "title": "Artin Sentinel 0.2.37 — Intelbras postAudio + Network Backoff",
+  "notes": "# Artin Sentinel 0.2.37 — Intelbras postAudio + Network Backoff\n\n- Implementa `IntelbrasHttpTalkbackSession` usando o endpoint oficial `audio.cgi?action=postAudio`.\n- Abre MIC Intelbras apenas após probe persistido com API autenticada, `audio_outputs > 0` e `post_audio_candidate=true`.\n- Captura microfone via FFmpeg/Pulse-PipeWire ou ALSA, mono 8 kHz, G.711 A-law.\n- Mantém click-to-start/click-to-stop e limite automático de segurança.\n- Adiciona telemetria `HTTP 1/4` a `HTTP 4/4`, frames e KiB transmitidos.\n- Preserva DVRIP como transporte independente para IT-Blue.\n- Corrige reconciliação iMX C quando metadata antiga apontava para `intelbras-mhdx`.\n- Classifica falhas de roteamento/rede no Live View e evita alternar TCP/UDP/Main/Sub quando o host está inacessível.\n- Adiciona backoff de conectividade 3/8/15/30 s e retoma tentativas automaticamente.\n- Mantém AKDB Core rev. 12; nenhuma biblioteca proprietária do NetSDK é redistribuída.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.36/ArtinSentinel_0.2.36_intelbras_http_api_foundation.zip",
-    "sha256": "dfc97fc99c3380ce6342d85fadb594cdf0c5ef5fe43464356e59a329662a352d",
-    "size": 1159587
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.37/ArtinSentinel_0.2.37_intelbras_postaudio_network_backoff.zip",
+    "sha256": "3d5f00a726d38b5230b8b2de78b52da03e2bad65109a0abc318696dc47c74eda",
+    "size": 1184073
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.36",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.37",
   "minimum_python": "3.12",
   "mandatory": false
 }
