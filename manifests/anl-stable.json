@@ -2,12 +2,12 @@
   "schema_version": 1,
   "application": "ArtinNetLens",
   "channel": "stable",
-  "version": "0.27.2",
-  "release_tag": "anl-v0.27.2",
-  "asset_name": "ArtinNetLens_0.27.2_endpoint_enrollment_interop_buildfix.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.27.2/ArtinNetLens_0.27.2_endpoint_enrollment_interop_buildfix.zip",
-  "sha256": "be3e62068ac4e8bd5441c31efbd670a00cacb75b4f6841971fb081bc81ac91af",
+  "version": "0.27.3",
+  "release_tag": "anl-v0.27.3",
+  "asset_name": "ArtinNetLens_0.27.3_windows_service_last_visit.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.27.3/ArtinNetLens_0.27.3_windows_service_last_visit.zip",
+  "sha256": "e2d3a2d82b654b4bb55f073fe6d20a78c208e42791e5cf1a2572161f5bce9c40",
   "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "# Artin NetLens 0.27.2 — Endpoint Enrollment Interop Fix\n\nA 0.27.2 corrige o primeiro pareamento real do ANL Agent for Windows observado em campo.\n\n## Correções\n\n- O Endpoint Receiver agora aceita corpos HTTP/1.1 com `Transfer-Encoding: chunked`, além de `Content-Length`.\n- O agente Windows envia as requisições de enrollment com corpo `ByteArrayContent`, garantindo `Content-Length` explícito e compatibilidade também com receivers 0.27.0/0.27.1.\n- Corrige o erro `Token ID e installation_id são obrigatórios` durante o primeiro pareamento, causado pelo receiver interpretar como vazio um JSON enviado em chunks pelo `HttpClient` do .NET.\n- Identificação do agente atualizada para 0.27.2.\n- Preserva o Last Scan Startup da 0.27.1: nenhuma descoberta automática é iniciada ao abrir o ANL.\n\n## Segurança\n\nO parser chunked mantém limite global de payload, valida tamanho e terminadores de chunks, limita trailers e rejeita `Transfer-Encoding` não suportado. Nenhuma credencial, senha ou conteúdo digitado é coletado.\n\n## Validação\n\nForam adicionados testes de enrollment com HTTP chunked, Content-Length, Transfer-Encoding inválido e contrato do agente Windows."
+  "notes": "# Artin NetLens 0.27.3 — Windows Service + Last Visit View\n\nA 0.27.3 transforma o primeiro pareamento de campo em uma fundação operacional contínua.\n\n- corrige a tabela da Descoberta ao abrir: o modo `Última visita` exibe as linhas persistidas sem fazer scan;\n- após uma descoberta manual concluída, o filtro retorna a `Presentes`;\n- separa `IP Agent` (informado pelo endpoint) de `IP Receiver` (peer observado), evitando confusão em NAT/VPN;\n- amplia a tabela Endpoint com CPU, RAM e disco;\n- Agent Windows 0.27.3 pode ser instalado como Windows Service com inicialização automática;\n- heartbeat padrão de 60 s e backoff de até 5 min quando o ANL estiver indisponível;\n- telemetria leve: CPU, RAM, disco do sistema, uptime, usuário da sessão ativa e IPv4 local;\n- migração da credencial para DPAPI LocalMachine durante a instalação do serviço;\n- nenhuma coleta de senhas, keylogging, mensagens, tela, câmera ou microfone."
 }
