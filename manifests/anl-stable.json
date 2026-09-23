@@ -2,12 +2,12 @@
   "schema_version": 1,
   "application": "ArtinNetLens",
   "channel": "stable",
-  "version": "0.27.3",
-  "release_tag": "anl-v0.27.3",
-  "asset_name": "ArtinNetLens_0.27.3_windows_service_last_visit.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.27.3/ArtinNetLens_0.27.3_windows_service_last_visit.zip",
-  "sha256": "e2d3a2d82b654b4bb55f073fe6d20a78c208e42791e5cf1a2572161f5bce9c40",
+  "version": "0.27.4",
+  "release_tag": "anl-v0.27.4",
+  "asset_name": "ArtinNetLens_0.27.4_agent_reliability_endpoint_telemetry.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.27.4/ArtinNetLens_0.27.4_agent_reliability_endpoint_telemetry.zip",
+  "sha256": "8a7ecd24c8f7d17bb65e7ea1a5fd0cf1ad6f7428ad66f14e904d60c0398a4390",
   "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "# Artin NetLens 0.27.3 — Windows Service + Last Visit View\n\nA 0.27.3 transforma o primeiro pareamento de campo em uma fundação operacional contínua.\n\n- corrige a tabela da Descoberta ao abrir: o modo `Última visita` exibe as linhas persistidas sem fazer scan;\n- após uma descoberta manual concluída, o filtro retorna a `Presentes`;\n- separa `IP Agent` (informado pelo endpoint) de `IP Receiver` (peer observado), evitando confusão em NAT/VPN;\n- amplia a tabela Endpoint com CPU, RAM e disco;\n- Agent Windows 0.27.3 pode ser instalado como Windows Service com inicialização automática;\n- heartbeat padrão de 60 s e backoff de até 5 min quando o ANL estiver indisponível;\n- telemetria leve: CPU, RAM, disco do sistema, uptime, usuário da sessão ativa e IPv4 local;\n- migração da credencial para DPAPI LocalMachine durante a instalação do serviço;\n- nenhuma coleta de senhas, keylogging, mensagens, tela, câmera ou microfone."
+  "notes": "# Artin NetLens 0.27.4 — Agent Reliability + Endpoint Telemetry\n\nA 0.27.4 nasce do teste de campo do Windows Service e do coredump observado durante uma atualização online no Fedora 44.\n\n## Estabilidade e atualização\n\n- o encerramento para atualização não usa mais `QThread.terminate()`;\n- o ANL solicita cancelamento/interrupção e aguarda os workers Qt realmente concluírem antes de encerrar;\n- Receiver e timers residentes são parados antes do fechamento;\n- o updater externo continua aguardando o PID antigo desaparecer antes de instalar a nova versão;\n- o objetivo é eliminar a corrida `QObject/QThread` observada no SIGBUS sem mascarar workers ainda vivos.\n\n## Endpoint Telemetry 2\n\n- Windows 10/11 + edição/DisplayVersion/build quando disponíveis;\n- uptime e horário estimado do último boot;\n- usuário da sessão ativa;\n- CPU/RAM/disco gerais;\n- CPU e memória do próprio Artin NetLens Agent;\n- IPv4 e inventário leve de interfaces de rede;\n- discos fixos com filesystem, total e livre;\n- contagem de processos sem enviar linha de comando ou conteúdo de processo;\n- histórico de métricas no ANL a cada 5 minutos, com retenção de 30 dias.\n\nO heartbeat continua em 60 s e a coleta foi desenhada para permanecer leve. A 0.27.4 não coleta senhas, teclas digitadas, conteúdo de mensagens, tela, câmera ou microfone."
 }
