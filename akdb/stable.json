@@ -1,14 +1,22 @@
 {
-  "schema": "artin-akdb-update-manifest-v1",
+  "schema": "artin-akdb-manifest-v1",
   "channel": "stable",
+  "release_revision": 1,
   "core_version": "0.2.0",
   "core_revision": 12,
-  "title": "Artin AKDB Core r12",
-  "published_at": "2026-09-23T00:00:00Z",
+  "domain_revisions": {
+    "sentinel": 9
+  },
+  "title": "Artin AKDB Core — Release 1",
+  "published_at": "2026-09-24T00:00:00Z",
   "notes": [
-    "Fonte oficial inicial da AKDB compartilhada.",
-    "Sem mudança de conhecimento em relação ao Core empacotado na geração atual."
+    "Primeira revisão oficial compatível com AKDB Sync + Field Learning.",
+    "Sem alteração de conhecimento em relação ao Core r12 já empacotado; estabelece a linha-base para comparações futuras."
   ],
+  "summary": {
+    "records": 13,
+    "extensions": 13
+  },
   "bundle": {
     "url": "https://raw.githubusercontent.com/artin-master/ArtinUpdates/main/akdb/core/akdb-core-r12.json",
     "sha256": "c1fc7d0fc3cff55ddd0df5725d5636b2db1f6589326a7d8e0756c2489e8eaf38",
