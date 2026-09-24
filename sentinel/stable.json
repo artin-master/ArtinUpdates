@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.41",
-  "title": "Artin Sentinel 0.2.41 — Intelbras NetSDK Literal Talk Setup",
-  "notes": "# Artin Sentinel 0.2.41 — Intelbras NetSDK Literal Talk Setup\n\n## Correções\n\n- Corrige `nPacketPeriod`: o valor 0 agora é preservado exatamente como no demo oficial Linux `05.Talk`; a 0.2.40 convertia 0/ausência para um período preenchido.\n- `TALK_CHANNEL` passa a ter o retorno verificado, em vez de ser enviado sem validação.\n- O diagnóstico exibe separadamente os resultados de `ENCODE_TYPE`, `SERVER_MODE`, `SPEAK_PARAM`, `TRANSFER_MODE` e `TALK_CHANNEL`.\n\n## Testes de campo\n\n- **A1:** demo literal — speaker 0, wait=false.\n- **A2:** somente `bEnableWait=true`.\n- **A3:** somente `speakerChannel=1`.\n- B/C permanecem para testar C270 PCM/G.711A depois de identificar o handshake correto.\n- MODE3 foi removido da UI da iMX C porque o dispositivo reportou talk V2 e recusou MODE3 (`0x80000007`).\n\n## Compatibilidade\n\nNenhuma alteração em RTSP, áudio de escuta, MHDX/CAM 5, IT-Blue/DVRIP, PTZ, updater ou AKDB. O NetSDK continua sendo provisionado localmente e não é redistribuído no pacote público.",
+  "version": "0.2.45",
+  "title": "Artin Sentinel 0.2.45 — AKDB Change Preview",
+  "notes": "# Artin Sentinel 0.2.45 — AKDB Change Preview\n\n- Adiciona \"Ver alterações\" em Configuração → AKDB após conferir o manifesto.\n- Mostra quais identidades/extensões serão incluídas ou editadas, com revisões e nomes dos campos alterados.\n- Exibe conflitos na prévia mesmo quando o botão de aplicar permanece bloqueado.\n- Mudanças no schema de uma extensão na mesma revisão passam a ser reconhecidas como conflitos.\n- A prévia é somente leitura e não exibe valores de payload nem altera a AKDB.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.41/ArtinSentinel_0.2.41_netsdk_literal_talk.zip",
-    "sha256": "d0a179104ec87715a63d7c2370e039582aa34257b77d0a3cee398f88b0ae46ae",
-    "size": 1217661
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.45/ArtinSentinel_0.2.45_akdb_change_preview.zip",
+    "sha256": "a5718cd3a487de493a0993daad61376c5247ee18e0103ab5e9f6bda2a8bcb607",
+    "size": 1236778
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.41",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.45",
   "minimum_python": "3.12",
   "mandatory": false
 }
