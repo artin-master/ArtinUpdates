@@ -2,25 +2,25 @@
   "schema_version": 2,
   "application": "ArtinRescNow",
   "channel": "stable",
-  "version": "0.10.0.2",
-  "release_tag": "arn-v0.10.0.2",
-  "asset_name": "ArtinRescNow_0.10.0.2_online_update.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.10.0.2/ArtinRescNow_0.10.0.2_online_update.zip",
-  "sha256": "a1c629c1331af20dc1107ca4e9951bc4ed267ecb2155340cc728f58d88902a66",
+  "version": "0.10.0.3",
+  "release_tag": "arn-v0.10.0.3",
+  "asset_name": "ArtinRescNow_0.10.0.3_online_update.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.10.0.3/ArtinRescNow_0.10.0.3_online_update.zip",
+  "sha256": "f7f6c2f063500fa959ad939ed7eb9e4c2bca166976e77e75223429bb67993902",
   "minimum_supported_version": "0.9.0",
   "mandatory": false,
-  "notes": "# Artin RescNow 0.10.0.2 — Storage Actions UX\n\n## Objetivo\n\nHotfix visual e operacional sobre a linha 0.10.0, preservando Image Center + Safe Restore e o hardening KDE/Arch da 0.10.0.1.\n\n## Mudanças\n\n- Painel **Detalhes do dispositivo selecionado** com ações mais compactas e consistentes.\n- `Analisar dados dos usuários`, proteção, inicialização/formatação, preparação/limpeza e sanitização usam ícones menores, padding reduzido e hierarquia visual mais discreta.\n- Ações destrutivas continuam claramente diferenciadas, mas sem blocos excessivamente altos.\n- Estados desabilitados permanecem legíveis.\n- Principais botões do módulo **Imagem** e de **Restauração** usam densidade compacta para reduzir peso visual.\n- O botão **Detalhes** da pré-verificação compacta (Clonagem/Imagem/Recuperação) agora abre um diálogo real com estado, motivos, contexto e estratégia recomendada; não depende mais de expandir um painel que podia ficar fora da área visível.\n- Após sanitização verificada de mídia externa, o diálogo final orienta o operador a usar **AÇÕES DE MÍDIA → Remover com segurança**, que desmonta volumes e solicita `udisksctl power-off` quando suportado.\n\n## Validação de campo incorporada\n\nSanitização completa validada pelo operador antes desta build:\n\n- Disco: **TOSHIBA MQ01ACF050 — 500 GB**\n- Resultado: **CLEAR VERIFICADO (HDD)**\n- Método: `hdd-zero-verify`\n- Tempo total: **1h 15min**\n- Etapa de verificação: **concluída**\n- Base utilizada no teste físico: **Artin RescNow 0.10.0**\n\nEste resultado valida positivamente o fluxo HDD zero + verificação para esse cenário de hardware. Não é generalizado automaticamente para outros modelos, bridges USB ou tecnologias de mídia.\n\n## Segurança\n\nNenhuma lógica de sanitização, clonagem, imagem, restauração ou Recovery foi relaxada. A remoção segura continua recusada durante operações de armazenamento ativas e só marca a mídia como pronta para retirada quando o power-off é confirmado.",
+  "notes": "# Artin RescNow 0.10.0.3 — Post-Sanitize Lifecycle\n\n## Objetivo\n\nCorrigir o ciclo de vida observado em campo depois de uma sanitização concluída: o refresh automático podia iniciar uma análise privilegiada de ocupação NTFS em outro disco e, se o operador fechasse o ARN naquele momento, essa tarefa somente leitura era apresentada como bloqueio de encerramento.\n\n## Correções\n\n- A análise automática de ocupação NTFS é tratada explicitamente como **enriquecimento secundário somente leitura**.\n- O refresh terminal da sanitização reconcilia o inventário, mas suprime por alguns segundos o autostart de uma nova análise de ocupação. Isso evita iniciar uma segunda tarefa apenas porque a sanitização terminou.\n- Ao fechar o ARN durante a análise de ocupação, o worker recebe **cancelamento cooperativo**, o aplicativo aguarda a thread terminar e executa o fechamento automaticamente.\n- O cancelamento motivado pelo fechamento não vira alerta falso de falha.\n- O **Application Update Guard** também solicita o cancelamento cooperativo da análise secundária antes de permitir a troca de runtime.\n- Operações realmente críticas/destrutivas continuam com os bloqueios e confirmações já existentes.\n\n## Segurança\n\n- Nenhuma escrita foi adicionada à análise de ocupação.\n- Não há uso de `QThread.terminate()`.\n- O fechamento só prossegue depois que a thread de análise encerra, evitando destruir `QObject/QThread` ainda ativos.\n- A supressão pós-sanitização é temporária; uma seleção posterior do operador continua podendo solicitar análise read-only normalmente.\n\n## Preservado\n\n- Storage Actions UX e botão **Remover com segurança** da 0.10.0.2.\n- KDE/Arch Maximize Hotfix da 0.10.0.1.\n- Centro de Imagens, Safe Restore, Clonagem, Recovery, BitLocker, Sanitização e Safety Gate da linha 0.10.0.\n\n## Gate físico\n\n1. Concluir sanitização em um disco de teste.\n2. Confirmar atualização do inventário sem uma análise NTFS secundária disparada imediatamente em outro disco.\n3. Iniciar uma análise de ocupação NTFS e fechar o ARN durante a leitura.\n4. Confirmar status de finalização read-only e fechamento automático após o worker encerrar.\n5. Confirmar que nenhum alerta falso de falha é criado.",
   "signature": {
     "schema_version": 1,
     "algorithm": "ed25519",
     "key_id": "eca1b5f80a150204",
     "application": "ArtinRescNow",
     "channel": "stable",
-    "version": "0.10.0.2",
-    "release_tag": "arn-v0.10.0.2",
-    "asset_name": "ArtinRescNow_0.10.0.2_online_update.zip",
-    "sha256": "a1c629c1331af20dc1107ca4e9951bc4ed267ecb2155340cc728f58d88902a66",
-    "signature": "gwi8A26yO65wVaEi+nRGRT0lHhGakVfBXSb2R3+h6dCawTPB0+BppjwWWC57VegwgoH0wpm93SXcJLUAoCYfDg=="
+    "version": "0.10.0.3",
+    "release_tag": "arn-v0.10.0.3",
+    "asset_name": "ArtinRescNow_0.10.0.3_online_update.zip",
+    "sha256": "f7f6c2f063500fa959ad939ed7eb9e4c2bca166976e77e75223429bb67993902",
+    "signature": "hIp0FoUwPrl2G5D/MdCf2N8lNNFEe8GizfB0V/uPn+2geUguD9zTQQdFK/Wjywh/32+SCNf9iAYUJzVAuKKuBw=="
   },
-  "signature_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.10.0.2/ArtinRescNow_0.10.0.2_online_update.zip.sig"
+  "signature_url": "https://github.com/artin-master/ArtinUpdates/releases/download/arn-v0.10.0.3/ArtinRescNow_0.10.0.3_online_update.zip.sig"
 }
