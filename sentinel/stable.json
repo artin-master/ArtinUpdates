@@ -2,15 +2,15 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.45",
-  "title": "Artin Sentinel 0.2.45 — AKDB Change Preview",
-  "notes": "# Artin Sentinel 0.2.45 — AKDB Change Preview\n\n- Adiciona \"Ver alterações\" em Configuração → AKDB após conferir o manifesto.\n- Mostra quais identidades/extensões serão incluídas ou editadas, com revisões e nomes dos campos alterados.\n- Exibe conflitos na prévia mesmo quando o botão de aplicar permanece bloqueado.\n- Mudanças no schema de uma extensão na mesma revisão passam a ser reconhecidas como conflitos.\n- A prévia é somente leitura e não exibe valores de payload nem altera a AKDB.",
+  "version": "0.2.46",
+  "title": "Artin Sentinel 0.2.46 — AKDB Contributions",
+  "notes": "# Artin Sentinel 0.2.46 — AKDB Contributions\n\n- Adiciona “Revisar candidatos…” em Configuração → AKDB, com lista, comparação com a identidade oficial instalada e prévia dos dados sanitizados.\n- Permite exportar o candidato selecionado como proposta JSON ou enviá-lo individualmente à caixa de entrada GitHub após confirmação.\n- Bloqueia envio sem revisão e verifica novamente o conteúdo antes de enviar; mudanças na fila exigem nova revisão.\n- Desativa envios automáticos de versões anteriores, inclusive configurações persistidas. O Core oficial só muda por atualização de revisão da AKDB.\n- Amplia a sanitização de dados privados em observações (e-mail, IPv6 e pares com segredo).",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.45/ArtinSentinel_0.2.45_akdb_change_preview.zip",
-    "sha256": "a5718cd3a487de493a0993daad61376c5247ee18e0103ab5e9f6bda2a8bcb607",
-    "size": 1236778
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.46/ArtinSentinel_0.2.46_akdb_contributions.zip",
+    "sha256": "7fb68e31b03611c2766930677b467d71b0b01410438d66e97f922a2d5e2c1a51",
+    "size": 1243271
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.45",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.46",
   "minimum_python": "3.12",
   "mandatory": false
 }
