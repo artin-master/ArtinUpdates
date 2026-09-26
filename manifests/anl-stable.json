@@ -2,12 +2,12 @@
   "schema_version": 1,
   "application": "ArtinNetLens",
   "channel": "stable",
-  "version": "0.34.2",
-  "release_tag": "anl-v0.34.2",
-  "asset_name": "ArtinNetLens_0.34.2_lan_loaded_metrics_delivery.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.34.2/ArtinNetLens_0.34.2_lan_loaded_metrics_delivery.zip",
-  "sha256": "f16b2d24ab8b94c417c465addbb9d56740a113f97c527f64a8ca269ee99ed854",
+  "version": "0.34.3",
+  "release_tag": "anl-v0.34.3",
+  "asset_name": "ArtinNetLens_0.34.3_agent_build_generator_hotfix.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.34.3/ArtinNetLens_0.34.3_agent_build_generator_hotfix.zip",
+  "sha256": "85c2bee590bfaa08a543055e8910697f9f34c56c82056bb93114db8d9d87b067",
   "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "# Artin NetLens 0.34.2 — LAN Loaded Metrics Delivery\n\nA 0.34.2 corrige o ponto observado no teste físico da 0.34.1 em que **Lat. carga** e **Jitter carga** podiam permanecer como `—`, especialmente em caminhos muito rápidos como VM ↔ host.\n\n## Correção principal\n\nUma transferência sintética única podia terminar antes de o Agent coletar pelo menos três amostras de RTT sob carga. O Agent 0.34.2 agora executa uma coleta limitada e determinística: até três rodadas, com quatro fluxos sintéticos paralelos por rodada, encerrando assim que há amostras suficientes. O volume continua limitado e depende do perfil escolhido.\n\nO resultado da tarefa também passa a informar `measurement_schema=lan-v2`, `agent_version` e `loaded_sample_count`, facilitando diagnóstico sem alterar o modelo de segurança.\n\n## Compatibilidade de Agent\n\nA janela Desempenho passa a consultar a versão do Endpoint selecionado. Para teste LAN completo, Agents anteriores à 0.34.2 geram aviso porque podem não entregar Lat. carga/Jitter carga de forma confiável. Em agendamento, o teste LAN é evitado até o Agent ser atualizado, para não criar novas medições automáticas incompletas.\n\n## Segurança\n\nNada muda na superfície de execução remota: a fila aceita apenas `speed_test` e `lan_test`; o LAN Probe usa exclusivamente o `ServerUrl` já pareado; não existe shell remoto, comando arbitrário ou destino LAN informado pela tarefa.\n\n## Validação\n\nA suíte final passou em **571 testes automatizados**. A compilação Python e a sintaxe dos scripts também foram revalidadas. O ambiente Linux de build continua sem .NET SDK, portanto o Agent 0.34.2 ainda precisa de compilação física na VM Windows para homologação do binário."
+  "notes": "# Artin NetLens 0.34.3 — Agent Build + Generator Hotfix\n\nHotfix de campo sobre a 0.34.2. Corrige o erro CS0173 encontrado ao compilar o Agent com .NET SDK 8 e endurece o instalador gerado pelo ANL. O diagnóstico LAN `lan-v2`, incluindo latência/jitter ociosos e sob carga, permanece inalterado funcionalmente.\n\nO `.cmd` agora é gravado sem BOM; elevação para Administrador espera o processo filho; e o instalador verifica a versão do executável antes e depois de instalar, além do estado `Running` do serviço."
 }
