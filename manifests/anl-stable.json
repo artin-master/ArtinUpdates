@@ -2,12 +2,12 @@
   "schema_version": 1,
   "application": "ArtinNetLens",
   "channel": "stable",
-  "version": "0.34.3",
-  "release_tag": "anl-v0.34.3",
-  "asset_name": "ArtinNetLens_0.34.3_agent_build_generator_hotfix.zip",
-  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.34.3/ArtinNetLens_0.34.3_agent_build_generator_hotfix.zip",
-  "sha256": "85c2bee590bfaa08a543055e8910697f9f34c56c82056bb93114db8d9d87b067",
+  "version": "0.34.4",
+  "release_tag": "anl-v0.34.4",
+  "asset_name": "ArtinNetLens_0.34.4_installer_performance_data_guard.zip",
+  "download_url": "https://github.com/artin-master/ArtinUpdates/releases/download/anl-v0.34.4/ArtinNetLens_0.34.4_installer_performance_data_guard.zip",
+  "sha256": "e5a5fb1aaeda95bda54256ccbdbe3c5a1497834cded703deb47eab06ebc61c99",
   "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "# Artin NetLens 0.34.3 — Agent Build + Generator Hotfix\n\nHotfix de campo sobre a 0.34.2. Corrige o erro CS0173 encontrado ao compilar o Agent com .NET SDK 8 e endurece o instalador gerado pelo ANL. O diagnóstico LAN `lan-v2`, incluindo latência/jitter ociosos e sob carga, permanece inalterado funcionalmente.\n\nO `.cmd` agora é gravado sem BOM; elevação para Administrador espera o processo filho; e o instalador verifica a versão do executável antes e depois de instalar, além do estado `Running` do serviço."
+  "notes": "# Artin NetLens 0.34.4 — Installer + Performance Data Guard Hotfix\n\nHotfix de campo sobre a 0.34.3. Corrige o bug confirmado no instalador gerado do Agent Windows, onde `-WebActivity` podia ser enviado como valor posicional, e adiciona validação por SHA-256 para impedir que uma instalação declare sucesso com binário diferente do pacote compilado.\n\nA área Desempenho recebeu uma barreira de qualidade de dados. Latência/jitter impossíveis ou absurdamente fora da faixa de uma medição concluída são tratados como inválidos e não entram em score, média, baseline, comparação entre origens nem sinais de degradação. Registros históricos permanecem no banco, mas métricas inválidas são ignoradas e sinalizadas na interface."
 }
