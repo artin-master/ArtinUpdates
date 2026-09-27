@@ -2,15 +2,21 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.48",
-  "title": "Artin Sentinel 0.2.48 — X3 Visual Verification",
-  "notes": "# Artin Sentinel 0.2.48 — X3 Visual Verification\n\n- Decodifica quadro dos canais DVRIP nativos e compara com PTZ/lentes aceitas antes de atribuir a uma lente fixa.\n- Canal DVRIP que repete outra imagem ou não fornece quadro comparável deixa de ser anunciado como lente adicional.\n- Controles PTZ ocultos ao selecionar lente fixa e atualizados quando muda uma rota de vídeo.\n\n## 0.2.47 — X3 Lens Identity\n\n- Protege a classificação de lentes IT-Blue X3 contra falsos positivos de alias RTSP da PTZ quando a imagem está mudando.\n- Confere as rotas nativas das lentes fixas mesmo que a busca RTSP tenha retornado três visões, substituindo o alias provisório no mesmo canal se a rota nativa responder com vídeo.\n- Mantém os slots 1=PTZ, 2=fixa 1 e 3=fixa 2 durante buscas parciais; fontes ausentes são marcadas indisponíveis sem renumerar as outras.\n- Quando uma rota validada muda, reinicia automaticamente a sessão daquele canal nos mosaicos principal e auxiliares. Se Main/Sub preferido está ausente, usa o outro perfil disponível.\n- Falha ou cancelamento de uma nova leitura não invalida as rotas diretas confirmadas anteriormente.\n- Teste com a câmera física ainda é necessário para confirmar as três imagens e o movimento PTZ.",
+  "version": "0.2.49",
+  "title": "Artin Sentinel 0.2.49 — Remote Recorder Pilot",
+  "notes": "# Artin Sentinel 0.2.49 — Remote Recorder Pilot\n\n- Cadastro e edição de gravadores em outros locais via endereço alcançável por rede privada/VPN.\n- Escolha explícita de protocolo Intelbras/Dahua ou Hikvision/JFL para equipamentos de identidade genérica.\n- Diagnóstico orienta sobre conectividade remota; busca sem vídeo confirmado preserva o inventário anterior.\n- URLs autenticadas são recusadas no cadastro manual; senhas continuam no diálogo/cofre seguro.\n- Integrações por serial cloud/P2P de fabricante aguardam modelo e mecanismo oficial compatível.\n\n## 0.2.48 — X3 Visual Verification\n\n- Decodifica quadro dos canais DVRIP nativos e compara com PTZ/lentes aceitas antes de atribuir a uma lente fixa.\n- Canal DVRIP que repete outra imagem ou não fornece quadro comparável deixa de ser anunciado como lente adicional.\n- Controles PTZ ocultos ao selecionar lente fixa e atualizados quando muda uma rota de vídeo.\n\n## 0.2.47 — X3 Lens Identity\n\n- Protege a classificação de lentes IT-Blue X3 contra falsos positivos de alias RTSP da PTZ quando a imagem está mudando.\n- Confere as rotas nativas das lentes fixas mesmo que a busca RTSP tenha retornado três visões, substituindo o alias provisório no mesmo canal se a rota nativa responder com vídeo.\n- Mantém os slots 1=PTZ, 2=fixa 1 e 3=fixa 2 durante buscas parciais; fontes ausentes são marcadas indisponíveis sem renumerar as outras.\n- Quando uma rota validada muda, reinicia automaticamente a sessão daquele canal nos mosaicos principal e auxiliares. Se Main/Sub preferido está ausente, usa o outro perfil disponível.\n- Falha ou cancelamento de uma nova leitura não invalida as rotas diretas confirmadas anteriormente.\n- Teste com a câmera física ainda é necessário para confirmar as três imagens e o movimento PTZ.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.48/ArtinSentinel_0.2.48_x3_visual_verification.zip",
-    "sha256": "26e354095eb77437f89188c4bb89485ec0bff78424f5a18334b48e3ab6c846a9",
-    "size": 1253723
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.49/ArtinSentinel_0.2.49_remote_recorder_pilot.zip",
+    "sha256": "83929b6273b67a437caffdf0374a76e4a50506ab37baeab12772d8a4a473fa5b",
+    "size": 1261789
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.48",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.49",
+  "source": {
+    "repository": "artin-master/ArtinSentinel",
+    "commit": null,
+    "build_id": null,
+    "built_at": null
+  },
   "minimum_python": "3.12",
   "mandatory": false
 }
