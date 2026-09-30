@@ -2,19 +2,19 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.86",
-  "title": "Artin Sentinel 0.2.86 — Configuração portátil",
-  "notes": "# Artin Sentinel 0.2.86 — Configuração portátil\n\n- Configuração → Salvar/Carregar configuração exporta e importa Sites ativos, equipamentos, canais, nomes e layouts.\n- Arquivo não leva senhas, tokens, URLs RTSP, MAC ou serial. Novos canais ficam pendentes até salvar credenciais e reler streams.\n- Importação preserva cadastros e layouts existentes por Site/IP/canal; repetição não duplica registros.",
+  "version": "0.2.89",
+  "title": "Artin Sentinel 0.2.89 — Foco estável na reprodução",
+  "notes": "# Artin Sentinel 0.2.89 — Foco estável na reprodução\n\nArrastar a barra de horário ou clicar em um trecho da linha do tempo mantém o quadro ampliado. O botão Parar ainda encerra a reprodução e retorna ao mosaico. Inclui as rotinas de observação e a captura rápida da 0.2.88.\n\nAo exportar um corte para MP4, a reprodução e o áudio param para liberar processamento; pressione Reproduzir para retomá-los após a conversão.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.86/ArtinSentinel_0.2.86_configuracao_portatil_publicar_stable.zip",
-    "sha256": "39e57ad1f01904b2b628f9b2401829f7d58de6a1cf4fdbc69cb9f8a64769eb19",
-    "size": 828663
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.89/ArtinSentinel_0.2.89_reproducao_estavel_publicar_stable.zip",
+    "sha256": "b9acc1af8a9e8a0be40cb8ea471b9695262a9992b59fceb20c90d294d9318836",
+    "size": 823560
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.86",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.89",
   "source": {
     "repository": "artin-master/ArtinSentinel",
-    "commit": "6958b6e0b0e9200d24cc6eff96c2ab4242f6c011",
-    "build_id": "artin-sentinel-0.2.86-6958b6e0b0e9",
+    "commit": "37b801f81bf210bae5b8ee91cbf5904ed3ee41c4",
+    "build_id": "artin-sentinel-0.2.89-37b801f81bf2",
     "built_at": null
   },
   "minimum_python": "3.12",
