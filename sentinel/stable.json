@@ -2,19 +2,19 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.90",
-  "title": "Artin Sentinel 0.2.90 — Atualização com múltiplas janelas",
-  "notes": "# Artin Sentinel 0.2.90 — Atualização com múltiplas janelas\n\nO atualizador identifica outras instâncias antes de encerrar a janela atual e informa o PID que precisa ser fechado. O instalador ignora processos já encerrados que ainda estejam temporariamente visíveis no sistema.",
+  "version": "0.2.91",
+  "title": "Artin Sentinel 0.2.91 — Configuração e descoberta",
+  "notes": "# Artin Sentinel 0.2.91 — Configuração e descoberta\n\nA aba Atualizações permite rolar verticalmente sem esmagar os campos. Equipamentos cadastrados continuam visíveis após a inclusão e após nova busca, com a marca * Incluído. Selecione a linha para ler Canais ou Excluir com a confirmação existente. Ver incluído seleciona o cadastro anterior. Equipamentos arquivados permanecem identificados para restauração.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.90/ArtinSentinel_0.2.90_update_instances_publicar_stable.zip",
-    "sha256": "d73acbc6bdbce75a8d7de78c50d1f18b237fd3d4e67e17d76584b3a855eca009",
-    "size": 823198
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.91/ArtinSentinel_0.2.91_configuracao_descoberta_publicar_stable.zip",
+    "sha256": "11ede5e39ef3d70adc4021dcffd0dcff5d551fb3ad80b3bd35865d717c5b5f12",
+    "size": 827209
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.90",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.91",
   "source": {
     "repository": "artin-master/ArtinSentinel",
-    "commit": "3065b1d5cf7f30ba1fa6933d20d1799d44aca8a8",
-    "build_id": "artin-sentinel-0.2.90-3065b1d5cf7f",
+    "commit": "14688a0e8bc5184ff6b5cfbb2a396d05e16b3173",
+    "build_id": "artin-sentinel-0.2.91-14688a0e8bc5",
     "built_at": null
   },
   "minimum_python": "3.12",
