@@ -2,19 +2,19 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.92",
-  "title": "Artin Sentinel 0.2.92 — Acesso Web confirmado e gestão de equipamentos",
-  "notes": "# Artin Sentinel 0.2.92 — Acesso Web confirmado e gestão de equipamentos\n\n- A descoberta sonda HTTP e HTTPS separadamente e registra confirmação e histórico de falhas por endpoint. Porta TCP aberta e `web_url` legado continuam sendo apenas pistas.\n- O acesso Web só fica disponível quando há confirmação HTTP. Vários serviços podem ser selecionados; HTTPS confirmado tem preferência e o endereço aberto contém apenas IP, esquema e porta, sem credenciais.\n- A tela Configuração → Equipamentos separa cadastrados e descobertos, aproxima as ações da tabela correspondente e agrupa Canais e Excluir da descoberta em Mais.\n- O cadastro manual mantém os valores e o diálogo aberto quando a validação falha; o contador da tabela mostra os resultados visíveis em relação ao total.\n- A suíte automatizada cobre armazenamento, probe e integração Qt; as três fontes oficiais de versão são verificadas quanto à consistência.",
+  "version": "0.2.93",
+  "title": "Artin Sentinel 0.2.93 — PTZ, Stream Diagnostics & Channel Health",
+  "notes": "# Artin Sentinel 0.2.93 — PTZ, Stream Diagnostics & Channel Health\n\n- PTZ usa capabilities e providers comprovados, evita inferências genéricas, preserva alvo, direção e velocidade originais para Stop, encerra o movimento ao trocar/fechar a seleção e descarta resultados atrasados associados a outra seleção.\n- Diagnóstico Main/Sub cobre somente rotas cadastradas e informa codec/resolução de vídeo, faixas de áudio disponíveis e causas distintas de falha. Cancelamento não persiste resultados parciais.\n- Saúde por canal reduz alertas repetidos, trata transições SEM SINAL/OFFLINE e sinaliza RECUPERADO na primeira confirmação saudável, preservando o histórico.\n- Talkback consolida prontidão das rotas existentes DVRIP/Sofia, Intelbras HTTP postAudio e Intelbras NetSDK, com mensagens de dependências ausentes e sanitização de credenciais conhecidas.\n- Validação física informada: MHDX 1004 e câmeras IP/MiboCam disponíveis foram usados, sem problemas aparentes nos fluxos verificados. Hikvision não foi validado fisicamente por indisponibilidade do equipamento; a validação específica permanece pendente.\n- ONVIF genérico não habilita PTZ automaticamente; equipamentos atrás de gravadores não recebem capability de talkback por inferência. Não são anunciados protocolos ou compatibilidades novos.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.92/ArtinSentinel_0.2.92.zip",
-    "sha256": "b2dbcc3bdd24a2593d4993c633be95d236616d882883e5399d61c6e027b15ba6",
-    "size": 846186
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.93/ArtinSentinel_0.2.93.zip",
+    "sha256": "160d0c21e936a214a99f29e193efe6516b783d050cfae5d2845d4d31337d4d84",
+    "size": 865936
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.92",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.93",
   "source": {
     "repository": "artin-master/ArtinSentinel",
-    "commit": "61b69ad549aea53eb6bcff5986be820c35027e1c",
-    "build_id": "artin-sentinel-0.2.92-61b69ad549ae",
+    "commit": "d16d4b0662cbf21e406ec406074ce5030cbb3c16",
+    "build_id": "artin-sentinel-0.2.93-d16d4b0662cb",
     "built_at": null
   },
   "minimum_python": "3.12",
