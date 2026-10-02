@@ -2,19 +2,19 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.93",
-  "title": "Artin Sentinel 0.2.93 — PTZ, Stream Diagnostics & Channel Health",
-  "notes": "# Artin Sentinel 0.2.93 — PTZ, Stream Diagnostics & Channel Health\n\n- PTZ usa capabilities e providers comprovados, evita inferências genéricas, preserva alvo, direção e velocidade originais para Stop, encerra o movimento ao trocar/fechar a seleção e descarta resultados atrasados associados a outra seleção.\n- Diagnóstico Main/Sub cobre somente rotas cadastradas e informa codec/resolução de vídeo, faixas de áudio disponíveis e causas distintas de falha. Cancelamento não persiste resultados parciais.\n- Saúde por canal reduz alertas repetidos, trata transições SEM SINAL/OFFLINE e sinaliza RECUPERADO na primeira confirmação saudável, preservando o histórico.\n- Talkback consolida prontidão das rotas existentes DVRIP/Sofia, Intelbras HTTP postAudio e Intelbras NetSDK, com mensagens de dependências ausentes e sanitização de credenciais conhecidas.\n- Validação física informada: MHDX 1004 e câmeras IP/MiboCam disponíveis foram usados, sem problemas aparentes nos fluxos verificados. Hikvision não foi validado fisicamente por indisponibilidade do equipamento; a validação específica permanece pendente.\n- ONVIF genérico não habilita PTZ automaticamente; equipamentos atrás de gravadores não recebem capability de talkback por inferência. Não são anunciados protocolos ou compatibilidades novos.",
+  "version": "0.2.94",
+  "title": "Artin Sentinel 0.2.94 — Live View Resilience & Audio Controls",
+  "notes": "# Artin Sentinel 0.2.94 — Live View Resilience & Audio Controls\n\n- **Live View:** fechar uma câmera maximizada restaura o mosaico e recriar a grade limpa também os tiles ocultos. Callbacks atrasados e sessões canceladas não reabrem canais fechados. Watchdog detecta decoder ativo sem frames e recupera somente o canal afetado, com backoff e pausa retomável após falhas repetidas.\n- Encerrar o aplicativo cancela retries/timers e aguarda a limpeza de workers, players e processos de mídia. Uma falha em um canal não reinicia os demais.\n- **Áudio de escuta:** curva perceptual torna níveis baixos e médios mais utilizáveis; 0% permanece mudo e 100% mantém o máximo normal. Trocas de canal/Main/Sub aguardam a limpeza do player anterior, e a interface mostra rótulo e percentual atualizados.\n- **Microfone/talkback:** ganho independente ajustável entre 50% e 200%; 100% preserva o nível original e o limitador protege contra picos antes da codificação. O percentual, reset para 100% e botão “Testar” ficam visíveis. Stop continua associado à sessão/canal original após trocar a seleção; diagnósticos permanecem sanitizados.\n- **UX:** removido o zoom duplicado do inspector; o zoom no quadrante e a capability do backend foram preservados. As linhas Áudio/Microfone se adaptam a larguras menores; seletor NetSDK e nomes longos permanecem dentro do painel.\n- IT-Blue continua no caminho DVRIP/Sofia; MiboCam iMX-C continua no NetSDK. Os modos B/C da MiboCam não são declarados homologados e não foram anunciados protocolos novos. Capacidades podem depender de validação física por modelo.\n- **Validação de campo:** controles Áudio/Microfone foram conferidos visualmente; IT-Blue foi usada em vídeo, áudio/talkback e estabilidade; MiboCam foi usada no layout e controles NetSDK/talkback. Hikvision não foi validado fisicamente por indisponibilidade do equipamento e continua pendente. A investigação de eventos/detecção/luz/sirene da IT-Blue não faz parte desta versão.\n- A suíte automatizada e a consistência entre as fontes de versão acompanham a release.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.93/ArtinSentinel_0.2.93.zip",
-    "sha256": "160d0c21e936a214a99f29e193efe6516b783d050cfae5d2845d4d31337d4d84",
-    "size": 865936
+    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.94/ArtinSentinel_0.2.94.zip",
+    "sha256": "68dfb93335544fa6d66d4039b83adca9923068c3299eea23b055e18e5591aef6",
+    "size": 2284479
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.93",
+  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.94",
   "source": {
     "repository": "artin-master/ArtinSentinel",
-    "commit": "d16d4b0662cbf21e406ec406074ce5030cbb3c16",
-    "build_id": "artin-sentinel-0.2.93-d16d4b0662cb",
+    "commit": "216f52825dad16c04517c6379e8ba7d023f0a003",
+    "build_id": "artin-sentinel-0.2.94-216f52825dad",
     "built_at": null
   },
   "minimum_python": "3.12",
