@@ -6,9 +6,9 @@
   "title": "Artin Sentinel 0.2.94.1 — Menu Selection UX",
   "notes": "# Artin Sentinel 0.2.94.1 — Menu Selection UX\n\n- **Menus e submenus:** a opção sob o cursor recebe destaque forte, deixando claro qual ação será executada ao clicar.\n- **Seleção persistente:** opções marcadas/checked usam um estado visual próprio e continuam distinguíveis do simples hover.\n- **Listas suspensas:** QComboBox e respectivas listas usam o mesmo padrão de hover/seleção, com contraste consistente.\n- **Itens desabilitados:** ficam visualmente separados das ações disponíveis, reduzindo interpretação equivocada.\n- Alteração exclusivamente de UX/estilo; não modifica protocolos, descoberta, vídeo, áudio, PTZ, banco ou lógica operacional.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinUpdates/releases/download/sentinel-v0.2.94.1/ArtinSentinel_0.2.94.1_menu_selection_ux.zip",
-    "sha256": "883a2e00dd7aba1460ac2500f8987425ae59890c683764929fac078b397e5e0f",
-    "size": 1522198
+    "url": "https://github.com/artin-master/ArtinUpdates/releases/download/sentinel-v0.2.94.1/ArtinSentinel_0.2.94.1.zip",
+    "sha256": "60cc303e1579c52df95668480468490cea413005ac0dd23ec3784a87bf1cd8d9",
+    "size": 963252
   },
   "release_url": "https://github.com/artin-master/ArtinUpdates/releases/tag/sentinel-v0.2.94.1",
   "source": {
