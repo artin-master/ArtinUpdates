@@ -1,13 +1,17 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "application": "ArtinNetLens",
   "channel": "beta",
-  "version": "0.15.0",
-  "release_tag": "anl-v0.15.0",
-  "asset_name": null,
-  "download_url": null,
-  "sha256": null,
-  "minimum_supported_version": "0.15.0",
+  "version": "0.38.0",
+  "release_tag": "anl-v0.38.0",
+  "asset_name": "ArtinNetLens_0.38.0_canonical_identity_network_intelligence.zip",
+  "download_url": "https://github.com/artin-master/ArtinNetLens/releases/download/anl-v0.38.0/ArtinNetLens_0.38.0_canonical_identity_network_intelligence.zip",
+  "sha256": "4a4814ec4a7d1c7eeb190b95ecea206fbdb52c6e7bc9abbc43ca171616c5ef41",
+  "source_repository": "artin-master/ArtinNetLens",
+  "source_commit": "b8b35452e683a4191848d47f224e03b5a8a1497d",
+  "build_id": "anl-0.38.0-b8b35452e683",
+  "built_at": "2026-10-05T16:44:50Z",
+  "minimum_supported_version": null,
   "mandatory": false,
-  "notes": "Canal beta inicializado. Nenhum pacote beta publicado ainda."
+  "notes": "Beta da Artin NetLens 0.38.0. Inclui identidade canônica por Site/equipamento, Timeline e evidências de identidade, Change Intelligence, diagnóstico guiado separado da descoberta, baselines adaptativos, hardening de lifecycle Qt/QThread e ajuda contextual por tooltips. Validada fisicamente no Fedora 44 KDE antes da publicação beta."
 }
