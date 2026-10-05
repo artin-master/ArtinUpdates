@@ -2,19 +2,20 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "stable",
-  "version": "0.2.94",
-  "title": "Artin Sentinel 0.2.94 — Live View Resilience & Audio Controls",
-  "notes": "# Artin Sentinel 0.2.94 — Live View Resilience & Audio Controls\n\n- **Live View:** fechar uma câmera maximizada restaura o mosaico e recriar a grade limpa também os tiles ocultos. Callbacks atrasados e sessões canceladas não reabrem canais fechados. Watchdog detecta decoder ativo sem frames e recupera somente o canal afetado, com backoff e pausa retomável após falhas repetidas.\n- Encerrar o aplicativo cancela retries/timers e aguarda a limpeza de workers, players e processos de mídia. Uma falha em um canal não reinicia os demais.\n- **Áudio de escuta:** curva perceptual torna níveis baixos e médios mais utilizáveis; 0% permanece mudo e 100% mantém o máximo normal. Trocas de canal/Main/Sub aguardam a limpeza do player anterior, e a interface mostra rótulo e percentual atualizados.\n- **Microfone/talkback:** ganho independente ajustável entre 50% e 200%; 100% preserva o nível original e o limitador protege contra picos antes da codificação. O percentual, reset para 100% e botão “Testar” ficam visíveis. Stop continua associado à sessão/canal original após trocar a seleção; diagnósticos permanecem sanitizados.\n- **UX:** removido o zoom duplicado do inspector; o zoom no quadrante e a capability do backend foram preservados. As linhas Áudio/Microfone se adaptam a larguras menores; seletor NetSDK e nomes longos permanecem dentro do painel.\n- IT-Blue continua no caminho DVRIP/Sofia; MiboCam iMX-C continua no NetSDK. Os modos B/C da MiboCam não são declarados homologados e não foram anunciados protocolos novos. Capacidades podem depender de validação física por modelo.\n- **Validação de campo:** controles Áudio/Microfone foram conferidos visualmente; IT-Blue foi usada em vídeo, áudio/talkback e estabilidade; MiboCam foi usada no layout e controles NetSDK/talkback. Hikvision não foi validado fisicamente por indisponibilidade do equipamento e continua pendente. A investigação de eventos/detecção/luz/sirene da IT-Blue não faz parte desta versão.\n- A suíte automatizada e a consistência entre as fontes de versão acompanham a release.",
+  "version": "0.2.94.1",
+  "title": "Artin Sentinel 0.2.94.1 — Menu Selection UX",
+  "notes": "# Artin Sentinel 0.2.94.1 — Menu Selection UX\n\n- **Menus e submenus:** a opção sob o cursor recebe destaque forte, deixando claro qual ação será executada ao clicar.\n- **Seleção persistente:** opções marcadas/checked usam um estado visual próprio e continuam distinguíveis do simples hover.\n- **Listas suspensas:** QComboBox e respectivas listas usam o mesmo padrão de hover/seleção, com contraste consistente.\n- **Itens desabilitados:** ficam visualmente separados das ações disponíveis, reduzindo interpretação equivocada.\n- Alteração exclusivamente de UX/estilo; não modifica protocolos, descoberta, vídeo, áudio, PTZ, banco ou lógica operacional.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinSentinel/releases/download/sentinel-v0.2.94/ArtinSentinel_0.2.94.zip",
-    "sha256": "68dfb93335544fa6d66d4039b83adca9923068c3299eea23b055e18e5591aef6",
-    "size": 2284479
+    "url": "https://github.com/artin-master/ArtinUpdates/releases/download/sentinel-v0.2.94.1/ArtinSentinel_0.2.94.1.zip",
+    "sha256": "60cc303e1579c52df95668480468490cea413005ac0dd23ec3784a87bf1cd8d9",
+    "size": 963252
   },
-  "release_url": "https://github.com/artin-master/ArtinSentinel/releases/tag/sentinel-v0.2.94",
+  "release_url": "https://github.com/artin-master/ArtinUpdates/releases/tag/sentinel-v0.2.94.1",
   "source": {
     "repository": "artin-master/ArtinSentinel",
-    "commit": "216f52825dad16c04517c6379e8ba7d023f0a003",
-    "build_id": "artin-sentinel-0.2.94-216f52825dad",
+    "commit": "8583b5e98f7abb507d4dd4a9930b8a33c4097b2f",
+    "branch": null,
+    "build_id": "artin-sentinel-0.2.94.1-8583b5e98f7a",
     "built_at": null
   },
   "minimum_python": "3.12",
