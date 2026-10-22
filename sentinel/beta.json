@@ -2,20 +2,20 @@
   "schema": "artin-update-manifest-v1",
   "app_id": "artin-sentinel",
   "channel": "beta",
-  "version": "0.2.94.1",
-  "title": "Artin Sentinel 0.2.94.1 — Menu Selection UX",
-  "notes": "# Artin Sentinel 0.2.94.1 — Menu Selection UX\n\n- **Menus e submenus:** a opção sob o cursor recebe destaque forte, deixando claro qual ação será executada ao clicar.\n- **Seleção persistente:** opções marcadas/checked usam um estado visual próprio e continuam distinguíveis do simples hover.\n- **Listas suspensas:** QComboBox e respectivas listas usam o mesmo padrão de hover/seleção, com contraste consistente.\n- **Itens desabilitados:** ficam visualmente separados das ações disponíveis, reduzindo interpretação equivocada.\n- Alteração exclusivamente de UX/estilo; não modifica protocolos, descoberta, vídeo, áudio, PTZ, banco ou lógica operacional.",
+  "version": "0.2.94.32",
+  "title": "Artin Sentinel 0.2.94.32 — 22/10/2026",
+  "notes": "# 0.2.94.32 — 22/10/2026\n\n- Inventário extensível Componentes e SDKs: executáveis, codecs, carga nativa isolada e sessões observadas.\n- Cadastro orientado pela marca com sugestão de protocolo e preparação opcional do SDK para novos Hikvision.\n- Menus agrupados: Adicionar, Editar/credenciais/acesso, Canais, Diagnóstico compatível e Mais.\n- Metadados reais de entrada nos tiles e na reprodução; prévia Hikvision Main até 1280×720.\n- SDK Hikvision envia comandos de velocidade ao DVR; caminho Hikvision RTSP limitado honestamente a 1×.\n- Exportação SDK, erro FFmpeg sanitizado, watchdog/cancelamento, duração/vídeo verificados antes da publicação e confirmação final.\n- Destino sem hard link usa criação exclusiva; erros de escrita não passam por sucesso.\n- Resultados antigos de reprodução limpos ao alterar backend; avisos repetidos agrupados.\n- Cloud Hik-Connect e escuta pelo SDK Hikvision continuam pendentes; validação física da nova aceleração/exportação necessária.",
   "package": {
-    "url": "https://github.com/artin-master/ArtinUpdates/releases/download/sentinel-v0.2.94.1/ArtinSentinel_0.2.94.1.zip",
-    "sha256": "60cc303e1579c52df95668480468490cea413005ac0dd23ec3784a87bf1cd8d9",
-    "size": 963252
+    "url": "https://github.com/artin-master/ArtinUpdates/releases/download/sentinel-v0.2.94.32/ArtinSentinel_0.2.94.32_instalacao_completa.zip",
+    "sha256": "848f11af9503aef0aa09bb332b89ff2d06bf901897e31beef94685634e6d91d3",
+    "size": 18639141
   },
-  "release_url": "https://github.com/artin-master/ArtinUpdates/releases/tag/sentinel-v0.2.94.1",
+  "release_url": "https://github.com/artin-master/ArtinUpdates/releases/tag/sentinel-v0.2.94.32",
   "source": {
     "repository": "artin-master/ArtinSentinel",
-    "commit": "8583b5e98f7abb507d4dd4a9930b8a33c4097b2f",
+    "commit": "5603967cb240d92f56afc7c02574703d416b02c1",
     "branch": null,
-    "build_id": "artin-sentinel-0.2.94.1-8583b5e98f7a",
+    "build_id": "artin-sentinel-0.2.94.32-5603967cb240",
     "built_at": null
   },
   "minimum_python": "3.12",
